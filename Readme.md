@@ -1,5 +1,8 @@
 # Divxplanet Altyazi İndirme Aparati
 
+- Görsel cümbüşüne bulaşmadan altyazı indirme hedesi.
+- XBMC Subtitle eklentisine addon hazırlığı
+
 ## Gereksinimler
 
 * Python 2.7
@@ -12,6 +15,11 @@
 ## Kullanım
 
 `python dpdl.py 'Dizi Adi' sezon_no bolum_no`
+
+1. Olası dizi adresi seçenekleri listelenir. (Tek sonuç çıktıysa direkt olarak o dizi seçilir)
+2. Diziye ait numara girilir.
+3. İlgili bölüme ait altyazılar listelenir.
+4. Altyazıya ait numara girilerek indirilir.
 
 ## Sorunlar
 
