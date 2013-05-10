@@ -40,7 +40,7 @@ def getmediaUrl(queryname):
         if sLink:
             linkurl = re.search(r"\/url\?q=(http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/.*.\.html).*", sLink["href"])
             if linkurl:
-                linkdictionary.append({"text": sSpan.contents, "name": queryname, "url": linkurl.group(1)})
+                linkdictionary.append({"text": sSpan.getText(), "name": queryname, "url": linkurl.group(1)})
     if len(linkdictionary) == 1:
         return linkdictionary[0]["url"]
     else:
