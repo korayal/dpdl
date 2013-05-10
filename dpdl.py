@@ -6,9 +6,9 @@ from BeautifulSoup import BeautifulSoup
 
 def getmediaUrl(mediaArgs):
     if len(mediaArgs) > 1:
-        query = "site:divxplanet.com inurl:sub/m intitle:'%s' intitle:'(%s)'" % (mediaArgs[0], mediaArgs[1])
+        query = "site:divxplanet.com inurl:sub/m intitle:\"%s\" intitle:\"(%s)\"" % (mediaArgs[0], mediaArgs[1])
     else:
-        query = "site:divxplanet.com inurl:sub/m intitle:'%s'" % (mediaArgs[0])
+        query = "site:divxplanet.com inurl:sub/m intitle:\"%s\"" % (mediaArgs[0])
     br = mechanize.Browser()
 
     # Cookie Jar
