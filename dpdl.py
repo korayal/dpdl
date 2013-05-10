@@ -3,7 +3,7 @@ import re, sys, os, cookielib
 import mechanize, rarfile
 from BeautifulSoup import BeautifulSoup
 
-def getUrl(queryname):
+def getmediaUrl(queryname):
     query = "site:divxplanet.com inurl:sub/m inurl:%s" % (queryname.replace(" ", "-"))
     br = mechanize.Browser()
 
@@ -54,7 +54,7 @@ def getUrl(queryname):
 
 def search_subtitles(title, season, episode): #standard input
     # Build an adequate string according to media type
-    tvurl = getUrl(title)
+    tvurl = getmediaUrl(title)
     print "looking at", tvurl
     divpname = re.search(r"http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/(.*.)\.html", tvurl).group(1)
     season = int(season)
@@ -137,11 +137,9 @@ def download_subtitles (subtitles_list, pos): #standard input
     # User-Agent (this is cheating, ok?)
     br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
-    r = br.open(dlurl)
-    html = r.read()
+    html = br.open(dlurl).read()
     br.select_form(name="dlform")
     br.submit()
-
     f = open(subtitles_list[pos]["filename"] + ".rar", "w")
     f.write(br.response().read())
     f.close()
@@ -162,6 +160,7 @@ def main(argv):
                     print i, sub["language_name"], sub["description"]
                     i += 1
                 dlsub = raw_input("Hangi Altyazi?")
+                download_subtitles(sublist, int(dlsub))
         else:
             print "Kullanim: python dldp.py 'Dizi Adi' sezon_no bolum_no"
             print "Ornek: python dp.py 'game of thrones' 3 3"
