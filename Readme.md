@@ -12,6 +12,11 @@
 
 ### Gereksinimlerin Kurulumu
 
+Akıl sağlığı açısından öncelikle easy_install kurunuz:
+https://pypi.python.org/pypi/setuptools
+
+Akabinde:
+
 * Linux : `sudo easy_install beautifulsoup mechanize rarfile`
 * Windows : `\Python27\Scripts\easy_install beautifulsoup mechanize rarfile`
 
