@@ -104,7 +104,7 @@ def search_subtitles(title, season, episode): #standard input
                 subtitles_list.append({'link'    : addr,
                                  'movie'         : title,
                                  'description'   : "%s" % (info[1].contents[0]),
-                                 'filename'      : "%s S%02dE%02d %s" % (title, season, episode, language),
+                                 'filename'      : "%s S%02dE%02d.%s" % (title, season, episode, lan_short),
                                  'language_flag' : "flags/%s.gif" % lan_short,
                                  'language_name' : language,
                                  'sync'          : False,
@@ -141,10 +141,13 @@ def download_subtitles (subtitles_list, pos): #standard input
     br.select_form(name="dlform")
     br.submit()
     f = open(subtitles_list[pos]["filename"] + ".rar", "w")
-    f.write(br.response().read())
+    f.write(br.response().get_data())
     f.close()
     rf = rarfile.RarFile(subtitles_list[pos]["filename"] + ".rar")
-    rf.extractall()
+    for r in rf.infolist():
+        if "srt" in r.filename or "sub" in r.filename:
+            rf.extract(r)
+            print "Downloaded: ", r.filename
     os.remove(subtitles_list[pos]["filename"] + ".rar")
     br.close()
 
