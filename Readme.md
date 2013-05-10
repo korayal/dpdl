@@ -26,3 +26,7 @@
 * XBMCye uyarlamak istediğimizde Rarfile eklentisi olmadigi icin ayrica eklemek gerekecek.
 * Paket altyazılar handle edilmiyor.
 * Film altyazıları handle edilmiyor.
+
+## Olabilecekler
+
+* Sickbeard icin bir eklenti yapilabilir.
