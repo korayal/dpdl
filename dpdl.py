@@ -140,7 +140,7 @@ def download_subtitles (subtitles_list, pos): #standard input
     html = br.open(dlurl).read()
     br.select_form(name="dlform")
     br.submit()
-    f = open(subtitles_list[pos]["filename"] + ".rar", "w")
+    f = open(subtitles_list[pos]["filename"] + ".rar", "wb")
     f.write(br.response().get_data())
     f.close()
     rf = rarfile.RarFile(subtitles_list[pos]["filename"] + ".rar")
