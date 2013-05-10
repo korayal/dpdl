@@ -17,8 +17,8 @@ https://pypi.python.org/pypi/setuptools
 
 Akabinde şu komutu çalıştırınız:
 
-* Linux : `sudo easy_install beautifulsoup mechanize rarfile`
-* Windows : `C:\Python27\Scripts\easy_install beautifulsoup mechanize rarfile`
+* Linux : `sudo easy_install beautifulsoup mechanize`
+* Windows : `C:\Python27\Scripts\easy_install beautifulsoup mechanize`
 
 ## Kullanım
 
