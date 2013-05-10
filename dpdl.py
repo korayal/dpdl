@@ -165,11 +165,11 @@ def main(argv):
                 dlsub = raw_input("Hangi Altyazi?")
                 download_subtitles(sublist, int(dlsub))
         else:
-            print "Kullanim: python dldp.py 'Dizi Adi' sezon_no bolum_no"
-            print "Ornek: python dp.py 'game of thrones' 3 3"
+            print "Kullanim: python dpdl.py 'Dizi Adi' sezon_no bolum_no"
+            print "Ornek: python dpdl.py 'game of thrones' 3 3"
     else:
-        print "Kullanim: python dldp.py 'Dizi Adi' sezon_no bolum_no"
-        print "Ornek: python dp.py 'game of thrones' 3 3"
+        print "Kullanim: python dpdl.py 'Dizi Adi' sezon_no bolum_no"
+        print "Ornek: python dpdl.py 'game of thrones' 3 3"
 
 if __name__ == "__main__":
    main(sys.argv[1:])
