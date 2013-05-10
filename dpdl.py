@@ -3,8 +3,11 @@ import re, sys, os, cookielib
 import mechanize, rarfile
 from BeautifulSoup import BeautifulSoup
 
-def getmediaUrl(queryname):
-    query = "site:divxplanet.com inurl:sub/m inurl:%s" % (queryname.replace(" ", "-"))
+def getmediaUrl(mediaArgs):
+    if mediaArgs[1]:
+        query = "site:divxplanet.com inurl:sub/m intitle:'%s' intitle:'(%s)'" % (mediaArgs[0], mediaArgs[1])
+    else:
+        query = "site:divxplanet.com inurl:sub/m intitle:'%s'" % (mediaArgs[0])
     br = mechanize.Browser()
 
     # Cookie Jar
@@ -40,7 +43,7 @@ def getmediaUrl(queryname):
         if sLink:
             linkurl = re.search(r"\/url\?q=(http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/.*.\.html).*", sLink["href"])
             if linkurl:
-                linkdictionary.append({"text": sSpan.getText(), "name": queryname, "url": linkurl.group(1)})
+                linkdictionary.append({"text": sSpan.getText(), "name": mediaArgs[0], "url": linkurl.group(1)})
     if len(linkdictionary) == 1:
         return linkdictionary[0]["url"]
     else:
@@ -54,7 +57,7 @@ def getmediaUrl(queryname):
 
 def search_subtitles(title, season, episode): #standard input
     # Build an adequate string according to media type
-    tvurl = getmediaUrl(title)
+    tvurl = getmediaUrl([title])
     print "looking at", tvurl
     divpname = re.search(r"http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/(.*.)\.html", tvurl).group(1)
     season = int(season)
