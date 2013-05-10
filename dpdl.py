@@ -145,7 +145,7 @@ def download_subtitles (subtitles_list, pos): #standard input
     f.close()
     rf = rarfile.RarFile(subtitles_list[pos]["filename"] + ".rar")
     for r in rf.infolist():
-        if "srt" in r.filename or "sub" in r.filename:
+        if re.search(r"(sub|srt)", r.filename):
             rf.extract(r)
             print "Downloaded: ", r.filename
     os.remove(subtitles_list[pos]["filename"] + ".rar")
