@@ -5,20 +5,20 @@
 
 ## Gereksinimler
 
-* Python 2.7
-* BeautifulSoup 3
-* Mechanize
-* Rarfile
+* Python 2.7 ( http://www.python.org/download/releases/2.7.3/ )
+* BeautifulSoup 3 ( http://www.crummy.com/software/BeautifulSoup/ )
+* Mechanize ( http://wwwsearch.sourceforge.net/mechanize/ )
+* Rarfile ( http://rarfile.berlios.de/ )
 
 ### Gereksinimlerin Kurulumu
 
-Akıl sağlığı açısından öncelikle easy_install kurunuz:
+Akıl sağlığı açısından öncelikle *easy_install* kurunuz:
 https://pypi.python.org/pypi/setuptools
 
-Akabinde:
+Akabinde şu komutu çalıştırınız:
 
 * Linux : `sudo easy_install beautifulsoup mechanize rarfile`
-* Windows : `\Python27\Scripts\easy_install beautifulsoup mechanize rarfile`
+* Windows : `C:\Python27\Scripts\easy_install beautifulsoup mechanize rarfile`
 
 ## Kullanım
 
