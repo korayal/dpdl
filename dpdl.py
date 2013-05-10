@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import re, sys, os, cookielib
-import mechanize, rarfile
+import mechanize
+import rarfile
 from BeautifulSoup import BeautifulSoup
 
 def getmediaUrl(mediaArgs):
@@ -43,7 +44,7 @@ def getmediaUrl(mediaArgs):
         if sLink:
             linkurl = re.search(r"\/url\?q=(http:\/\/divxplanet.com\/sub\/m\/[0-9]{3,8}\/.*.\.html).*", sLink["href"])
             if linkurl:
-                linkdictionary.append({"text": sSpan.getText(), "name": mediaArgs[0], "url": linkurl.group(1)})
+                linkdictionary.append({"text": sSpan.getText().encode('ascii', 'ignore'), "name": mediaArgs[0], "url": linkurl.group(1)})
     if len(linkdictionary) == 1:
         return linkdictionary[0]["url"]
     else:

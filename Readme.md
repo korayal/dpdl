@@ -8,7 +8,6 @@
 * Python 2.7 ( http://www.python.org/download/releases/2.7.3/ )
 * BeautifulSoup 3 ( http://www.crummy.com/software/BeautifulSoup/ )
 * Mechanize ( http://wwwsearch.sourceforge.net/mechanize/ )
-* Unrar (http://www.rarlab.com/rar_add.htm)
 
 ### Gereksinimlerin Kurulumu
 
