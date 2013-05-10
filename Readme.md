@@ -6,7 +6,7 @@
 * BeautifulSoup 3
 * Mechanize
 
---buralara kurulumla ilgili ufak tefek hedeler--
+--buralara kurulumla ilgili ufak tefek hedeler :) --
 
 # Kullanım
 
