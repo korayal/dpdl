@@ -10,7 +10,10 @@
 * Mechanize
 * Rarfile
 
---buralara kurulumla ilgili ufak tefek hedeler :) --
+### Gereksinimlerin Kurulumu
+
+* Linux : `sudo easy_install beautifulsoup mechanize rarfile`
+* Windows : `\Python27\Scripts\easy_install beautifulsoup mechanize rarfile`
 
 ## Kullanım
 
