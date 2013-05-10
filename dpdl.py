@@ -1,5 +1,6 @@
 #!/usr/bin/python
-import re, sys, os, mechanize, cookielib, rarfile
+import re, sys, os, cookielib
+import mechanize, rarfile
 from BeautifulSoup import BeautifulSoup
 
 def getUrl(queryname):
