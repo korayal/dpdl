@@ -7,6 +7,10 @@ import mechanize
 import rarfile
 from BeautifulSoup import BeautifulSoup
 
+"""
+    Divxplanet Altyazi indirme aparati
+"""
+
 
 def getmediaUrl(mediaArgs):
     if len(mediaArgs) > 1:
