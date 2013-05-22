@@ -1,7 +1,7 @@
 # Divxplanet Altyazi İndirme Aparati
 
 - Görsel cümbüşüne bulaşmadan altyazı indirme hedesi.
-- XBMC Subtitle eklentisine addon hazırlığı
+- XBMC Subtitle eklentisi : https://github.com/korayal/script.xbmc.subtitles
 
 ## Gereksinimler
 
